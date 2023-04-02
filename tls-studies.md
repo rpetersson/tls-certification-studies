@@ -42,11 +42,41 @@ The above + the below is validated:
 SAN  = Subject Alternative Name, used to protect multiple websites with the same certificate.
 Wildcard = For example *.asd.com. Used to protect multiple subdomains. Not allowed for Extended Validation.
 ## • Describe domain control and organization validation methods
-Domain Control:
+### Domain Control: Owner need to prove control over domain.
 
-Organization Validation Methods:
-## • Describe how the SSL/TLS “handshake”
-## works in detail, Including the role of root, intermediate (ICA), end-entity and cross-root certificates
+### Organization Validation Methods:
+Document Verification: Prove ownership with legal document that verifies owner of the organization.
+Phone Verification: The CA calls phone number associated with the company.
+Third-party database verification.
+Site visit.
+
+## • Describe how the SSL/TLS “handshake” works in detail, Including the role of root, intermediate (ICA), end-entity and cross-root certificates.
+
+RSA and DHE (Diffie-Hellman Ephemeral) are key exchange algorithms used in the TLS handshake. The RSA key exchange algorithm is used in TLS 1.0 and TLS 1.1, while the DHE algorithm is used in TLS 1.2 and later versions.
+
+The key difference between RSA and DHE is the way they exchange keys. In RSA, the client generates a random number and encrypts it using the server's public key. The server decrypts the message using its private key and generates the symmetric key for the session. 
+
+In DHE, the client and server exchange public keys and use them to generate a shared secret. This shared secret is then used to generate the symmetric key for the session.
+
+### Intermediate CA
+ links together leaf certificates to root CA creating a chain to the CA. This is because it is a security risk for the root CA to issue leaf certificates directly.
+
+### TLS/SSL 1.0 - RSA
+#### Handshake 
+##### 1 - Client Hello
+Random String + List of Cipher Suites.
+##### 2 - Server Hello
+Asserts its identity by providing its certificate. And chooses the strongest cipher suite that both client and server support.
+##### 3 - Client Master Key 
+Client first verifies signature of the certificates Certificate Authority (CA) (root). To the public key of the CA embedded in the client application. After verifying the server the client generates a "Master Session Key". This key is used as a seed to to generate the server and client keys.
+##### 4 - Server Verify
+Server decrypts the master session key using the servers private key and using the session key to create the corresponding server key pairs.
+
+### TLS 1.2 DHA (Diffie-Hellman Ephemeral)
+
+### TLS 1.3 DH (Diffie Hellman)
+
+
 ## • Describe the CRL and OCSP methods for revocation checking (including OCSP Stapling)
 ## • List common algorithms used in TLS for key agreement, encryption, digital signatures, and hashing
 ## • Describe “Forward Secrecy”
