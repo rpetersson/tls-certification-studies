@@ -76,19 +76,58 @@ Server decrypts the master session key using the servers private key and using t
 
 ### TLS 1.3 DH (Diffie Hellman)
 
-
 ## • Describe the CRL and OCSP methods for revocation checking (including OCSP Stapling)
+CRL = Certificate Revocation list
+OCSP = Online Certificate Status Protocol 
+
+Two methods for checking revocation status.
+
+CRL = Publishes a list of revoked certificates on a public list.
+OCSP = Client sends a request to OCSP server with the certificates serial number.
+
+OCSP Stapling = Technique that improves performance and privacy of OCSP checks.
+
 ## • List common algorithms used in TLS for key agreement, encryption, digital signatures, and hashing
+Key Exchange - RSA, DH, ECDH, PSK
+Authentication (Signature) - RSA, DSA
+Bulk Encryption (Encrypt Data beeing sent) - AES, Cameilla, ARIA
+Message Authentication Code - SHA-256
+
+All these make up a "Cipher Suite" Ex:
+TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+
+• TLS is the protocol.
+• ECDHE is the key exchange algorithm ephemeral Elliptic Curve Diffie Hellman (ECDHE).
+• RSA is the authentication (signature) algorithm.
+• AES_128_GCM is the bulk encryption algorithm.
+• SHA-256 is the MAC algorithm.
+
+
 ## • Describe “Forward Secrecy”
+Fear that data can be decrypted in the future if key was disclosed. "Forward Secrecy" is obtained by generating new key material for each session.
+
 ## • List the benefits of Elliptic Curve
+Stronger Encryption
+Performance
+Scalable
+
+
 ## Cryptography for TLS
 ## • Explain the dangers of expired, misconfigured, self-signed and “vendor” certificates
-## • Identify common vulnerabilities of
-## outdated protocols (Heartbleed, etc) • Describe how phishing websites work • Describe Server Name Indication (SNI) ## • Describe Certificate Transparency (CT) • Describe Certificate Authority
-## Authorisation (CAA)
+- Expired certificates can lead to trust errors in the browser, which in turn discourage users to visit the site.
+- Webpage outage.
+- Make client vulnerable to "MITM" attacks.
+- Self-signed: No third party to verify the validity of the certificate.
+
+
+## • Identify common vulnerabilities of outdated protocols (Heartbleed, etc) 
+## • Describe how phishing websites work 
+## • Describe Server Name Indication (SNI) 
+
+## • Describe Certificate Transparency (CT) • Describe Certificate Authority
+##   Authorisation (CAA)
 ## • Describe Certificate Pinning
-## • Describe HTTP Strict Transport Security
-## (HSTS)
+## • Describe HTTP Strict Transport Security (HSTS)
 ## • Describe HTTP/2
 ## • Explain the term “Always-on SSL”
 ## • Explain the role of the CA/B Forum
