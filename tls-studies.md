@@ -9,7 +9,7 @@ Same key used for encryption and decryption. Both parties have the same key.
 ### Asymmetric (Public Key Infrastructure) PKI 
 Both parties have a private and public key. The public keys are exchanged and traffic meant for the other party is encrypted with the other party's public key. The private key of the receiving party is then used to decrypt the message.
 ## • Describe how digital signatures work
-A digital signature is when for example the sender creates two hash values, one is encrypted with its private key and sends it to the receiver. The receiver who then has access to the senders public key can decrypt the encrypted has and can compare the two values are the same, thus conforming the senders identity and integrity.
+A digital signature is when for example the sender creates two hash values, one is encrypted with its private key and sends it to the receiver. The receiver who then has access to the senders public key can decrypt the encrypted hash and can compare the two values are the same, thus conforming the senders identity and integrity.
 ## • Describe the details of an SSL/TLS certificate, including extensions and file formats
 SSL/TLS certificate is used to secure communication between a client and a server. It contains information about the websites domain name, owner and certificate validity period, public key, signature algorithm used by the CA.
 ### Extensions
