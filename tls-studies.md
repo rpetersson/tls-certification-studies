@@ -153,7 +153,22 @@ Dynamic Pinning involves specifying a set of SSL/TLS certificate details or publ
 HTTP Strict Transport Security (HSTS) is a security mechanism that allows web servers to instruct user agents (such as web browsers) to only communicate with them using secure HTTPS connections, and to automatically upgrade insecure HTTP connections to HTTPS. HSTS helps to protect against various types of attacks that exploit weaknesses in the HTTP protocol, such as man-in-the-middle attacks, SSL stripping, and cookie hijacking.
 
 ## • Describe HTTP/2
+HTTP/2 (or simply HTTP2) is a major revision of the HTTP (Hypertext Transfer Protocol) network protocol that is used to transfer data between web servers and clients (such as web browsers). HTTP2 was designed to address the limitations and performance issues of HTTP/1.x, and to provide a faster, more efficient, and more secure web browsing experience.
+
+### Some of the key features and improvements of HTTP2 are:
+Multiplexed streams: HTTP2 allows multiple requests and responses to be sent and received simultaneously over a single TCP connection, which reduces the latency and improves the performance of web pages.
+
+#### Binary protocol: 
+HTTP2 uses a binary protocol instead of the text-based protocol of HTTP/1.x, which makes it more efficient to parse and process, and reduces the overhead of data transmission.
+
+#### Server push: 
+HTTP2 allows servers to push resources (such as images, scripts, and stylesheets) to the client's cache before they are requested, which can reduce the number of round trips required to load a web page and improve the performance.
+
+#### Header compression: 
+HTTP2 uses a new header compression algorithm (HPACK) that reduces the size of header fields, which reduces the amount of data that needs to be transmitted and improves the performance.
+
+# Secure by default: 
 ## • Explain the term “Always-on SSL”
+HTTP2 requires the use of TLS (Transport Layer Security) encryption by default, which provides greater security and privacy for web browsing.
 ## • Explain the role of the CA/B Forum
-## • List and describe best practices for SSL
-## security and performance
+## • List and describe best practices for SSL security and performance
