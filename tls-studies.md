@@ -120,12 +120,24 @@ Scalable
 - Self-signed: No third party to verify the validity of the certificate.
 
 
-## • Identify common vulnerabilities of outdated protocols (Heartbleed, etc) 
-## • Describe how phishing websites work 
-## • Describe Server Name Indication (SNI) 
+## • Identify common vulnerabilities of outdated protocols (Heartbleed, etc)
+Expired / Misconfigured certificates, Self-signed, Phishing Sites using https, CA attacks, Certificate expiration and no rotation..
 
-## • Describe Certificate Transparency (CT) • Describe Certificate Authority
-##   Authorisation (CAA)
+POODLE = Padding Oracle On Downgraded Legacy Encryption.
+The client initiates the handshake and sends a list of supported SSL/TLS versions. An attacker intercepts the traffic, performing a man-in-the-middle (MITM) attack, and impersonates the server until the client agrees to downgrade the connection to SSL 3.0. Then using automated tools the attacker kan decipher data exploiting the SSL 3.0 protocol.
+
+## • Describe how phishing websites work 
+Tricking users into disclosing private information by using a website that looks similar to the original website.
+
+## • Describe Server Name Indication (SNI) 
+TLS does not provide a mechanism for a client to tell the server the name of the website it is trying to contact. It is desirable to provide this information when a server is hosting multiple websites
+
+## • Describe Certificate Transparency (CT)
+Certificate Transparency (CT) is a mechanism for publicly logging all SSL/TLS certificates issued by Certificate Authorities (CAs) in a way that makes it possible to detect and respond to fraudulent or malicious certificates. In a typical CT system, the CA is required to submit each SSL/TLS certificate it issues to one or more publicly accessible logs. These logs then make the certificates available for public inspection, allowing anyone to monitor the issuance of SSL/TLS certificates and to detect any suspicious or fraudulent activity.
+
+## • Describe Certificate Authority Authorisation (CAA)
+Certificate Authority Authorization (CAA) is a DNS security standard that enables domain name owners to specify which Certificate Authorities (CAs) are authorized to issue SSL/TLS certificates for their domain. This mechanism is designed to prevent fraudulent or unauthorized issuance of SSL/TLS certificates by a rogue or compromised CA.
+
 ## • Describe Certificate Pinning
 ## • Describe HTTP Strict Transport Security (HSTS)
 ## • Describe HTTP/2
