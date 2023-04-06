@@ -139,7 +139,19 @@ Certificate Transparency (CT) is a mechanism for publicly logging all SSL/TLS ce
 Certificate Authority Authorization (CAA) is a DNS security standard that enables domain name owners to specify which Certificate Authorities (CAs) are authorized to issue SSL/TLS certificates for their domain. This mechanism is designed to prevent fraudulent or unauthorized issuance of SSL/TLS certificates by a rogue or compromised CA.
 
 ## • Describe Certificate Pinning
+Certificate Pinning is a security technique used to prevent man-in-the-middle (MITM) attacks by ensuring that a web or mobile application only accepts SSL/TLS certificates from a specific set of trusted Certificate Authorities (CAs) or public key hashes.
+
+In certificate pinning, the client application includes a predefined set of one or more public key hashes or X.509 certificate details that are associated with the server's SSL/TLS certificate. When the client connects to the server, it verifies that the presented SSL/TLS certificate matches the predefined set of details or hashes. If it doesn't match, the connection is terminated.
+
+There are two types of certificate pinning: Static and Dynamic.
+
+Static Pinning involves hardcoding a specific set of SSL/TLS certificate details or public key hashes within the application's codebase. This is inflexible and requires manual updating if the SSL/TLS certificate changes.
+
+Dynamic Pinning involves specifying a set of SSL/TLS certificate details or public key hashes in the application's code, but also allows for the inclusion of additional SSL/TLS certificates that are not specified in the code. This is more flexible and allows for automatic updating of SSL/TLS certificates.
+
 ## • Describe HTTP Strict Transport Security (HSTS)
+HTTP Strict Transport Security (HSTS) is a security mechanism that allows web servers to instruct user agents (such as web browsers) to only communicate with them using secure HTTPS connections, and to automatically upgrade insecure HTTP connections to HTTPS. HSTS helps to protect against various types of attacks that exploit weaknesses in the HTTP protocol, such as man-in-the-middle attacks, SSL stripping, and cookie hijacking.
+
 ## • Describe HTTP/2
 ## • Explain the term “Always-on SSL”
 ## • Explain the role of the CA/B Forum
